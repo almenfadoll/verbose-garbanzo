@@ -1,0 +1,1190 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRILLIANT SERVICES | حلول برمجية وتقنيات غامرة - البحرين</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-dark: #172554;
+            --primary-light: #3b82f6;
+            --secondary: #0ea5e9;
+            --secondary-light: #38bdf8;
+            --accent: #f97316;
+            --accent-light: #fb923c;
+            --white-pure: #ffffff;
+            --white-soft: #f8fafc;
+            --white-warm: #f1f5f9;
+            --gray-light: #e2e8f0;
+            --gray: #64748b;
+            --dark: #0f172a;
+            --brand-gradient: linear-gradient(135deg, #1e3a8a 0%, #0ea5e9 100%);
+            --brand-gradient-light: linear-gradient(135deg, #3b82f6 0%, #38bdf8 100%);
+            --vr-gradient: linear-gradient(135deg, #6b21a5 0%, #c026d3 100%);
+            --ar-gradient: linear-gradient(135deg, #be123c 0%, #e11d48 100%);
+            --ai-gradient: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            --dt-gradient: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --border-radius: 20px;
+            --border-radius-md: 16px;
+            --border-radius-sm: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, var(--white-soft) 0%, var(--white-warm) 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .visual-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; pointer-events: none; }
+        .pattern-dots { position: absolute; width: 100%; height: 100%; background-image: radial-gradient(var(--gray-light) 1px, transparent 1px); background-size: 30px 30px; opacity: 0.3; }
+        .gradient-orb { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%); border-radius: 50%; top: -200px; right: -200px; filter: blur(60px); }
+        .gradient-orb-2 { position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(192,38,211,0.05) 0%, transparent 70%); bottom: -100px; left: -100px; filter: blur(60px); }
+        
+        header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--gray-light); position: fixed; width: 100%; top: 0; z-index: 1000; transition: var(--transition); }
+        .container { max-width: 1300px; margin: 0 auto; padding: 0 25px; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; }
+        .logo { display: flex; align-items: center; text-decoration: none; gap: 12px; }
+        .logo-icon { width: 48px; height: 48px; background: var(--brand-gradient); border-radius: 14px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.4rem; box-shadow: var(--shadow); }
+        .logo h1 { font-size: 1.2rem; margin: 0; color: var(--dark); }
+        .logo span { font-size: 0.7rem; color: var(--gray); }
+        .nav-links { display: flex; list-style: none; gap: 5px; flex-wrap: wrap; }
+        .nav-links a { color: var(--dark); text-decoration: none; padding: 8px 18px; border-radius: 30px; font-weight: 500; transition: var(--transition); font-size: 0.9rem; }
+        .nav-links a:hover, .nav-links a.active { background: var(--primary-light); color: white; }
+        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--primary); cursor: pointer; }
+        
+        .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--brand-gradient); color: white; padding: 12px 28px; border-radius: 40px; text-decoration: none; font-weight: 700; border: none; cursor: pointer; transition: var(--transition); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: transparent; color: var(--primary); padding: 12px 28px; border-radius: 40px; text-decoration: none; font-weight: 700; border: 2px solid var(--primary-light); transition: var(--transition); }
+        .btn-outline:hover { background: var(--primary-light); color: white; }
+        .btn-sm { background: var(--brand-gradient-light); color: white; border: none; padding: 6px 16px; border-radius: 30px; cursor: pointer; font-size: 0.8rem; transition: var(--transition); }
+        
+        .hero { padding: 140px 0 80px; text-align: center; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; margin-bottom: 20px; }
+        .hero h1 span { background: var(--brand-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .hero p { max-width: 700px; margin: 0 auto 30px; color: var(--gray); font-size: 1.2rem; }
+        .hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        
+        .section-title { font-size: clamp(1.8rem, 3.5vw, 2.2rem); text-align: center; margin-bottom: 15px; color: var(--dark); font-weight: 800; }
+        .section-title span { background: var(--brand-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .section-subtitle { text-align: center; color: var(--gray); max-width: 700px; margin: 0 auto 50px; font-size: 1rem; }
+        
+        /* خدمات البرمجيات */
+        .services-section { padding: 80px 0; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .service-card { background: var(--white-pure); border-radius: var(--border-radius); padding: 30px; transition: var(--transition); box-shadow: var(--shadow); }
+        .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+        .service-icon { width: 70px; height: 70px; background: var(--brand-gradient-light); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: white; font-size: 1.8rem; }
+        .service-card h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--primary); }
+        .service-card p { color: var(--gray); font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px; }
+        
+        /* التقنيات الغامرة */
+        .immersive-section { padding: 80px 0; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); color: white; }
+        .immersive-section .section-title span { background: linear-gradient(135deg, #c026d3, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .immersive-section .section-subtitle { color: rgba(255,255,255,0.7); }
+        .immersive-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .immersive-card { background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); border-radius: var(--border-radius); padding: 30px; transition: var(--transition); border: 1px solid rgba(255,255,255,0.1); }
+        .immersive-card:hover { transform: translateY(-8px); background: rgba(255,255,255,0.12); border-color: var(--secondary-light); }
+        .immersive-icon { width: 70px; height: 70px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 1.8rem; }
+        .vr-icon { background: var(--vr-gradient); }
+        .ar-icon { background: var(--ar-gradient); }
+        .ai-icon { background: var(--ai-gradient); }
+        .dt-icon { background: var(--dt-gradient); }
+        .immersive-card h3 { font-size: 1.3rem; margin-bottom: 10px; }
+        .immersive-card p { color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px; }
+        
+        /* ============================================ */
+        /* قسم أعمالنا - Portfolio */
+        /* ============================================ */
+        .portfolio-section { padding: 80px 0; background: var(--white-soft); }
+        .portfolio-filters { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
+        .filter-btn { background: var(--white-pure); border: 1px solid var(--gray-light); padding: 8px 24px; border-radius: 40px; cursor: pointer; font-family: 'Tajawal', sans-serif; font-weight: 500; transition: var(--transition); color: var(--dark); }
+        .filter-btn:hover, .filter-btn.active { background: var(--primary-light); color: white; border-color: var(--primary-light); }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .portfolio-item { background: var(--white-pure); border-radius: var(--border-radius); overflow: hidden; transition: var(--transition); box-shadow: var(--shadow); }
+        .portfolio-item:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+        .portfolio-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 58, 138, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+        .portfolio-overlay a {
+            background: white;
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .portfolio-overlay a:hover { transform: scale(1.1); background: var(--primary-light); color: white; }
+        .portfolio-info { padding: 20px; }
+        .portfolio-category {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .category-vr { background: var(--vr-gradient); color: white; }
+        .category-ai { background: var(--ai-gradient); color: white; }
+        .category-ar { background: var(--ar-gradient); color: white; }
+        .category-software { background: var(--brand-gradient-light); color: white; }
+        .category-web { background: var(--dt-gradient); color: white; }
+        .portfolio-info h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--primary); }
+        .portfolio-info p { color: var(--gray); font-size: 0.85rem; line-height: 1.6; }
+        .portfolio-tech { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+        .tech-tag { background: var(--white-soft); padding: 3px 10px; border-radius: 20px; font-size: 0.7rem; color: var(--primary); }
+        
+        /* قسم الإحصائيات */
+        .stats-section { background: var(--white-pure); padding: 60px 0; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
+        .stat-card .stat-number { font-size: 3rem; font-weight: 900; color: var(--primary); }
+        .stat-card p { color: var(--gray); }
+        
+        /* نموذج الاتصال */
+        .contact-section { padding: 80px 0; background: var(--white-soft); }
+        .contact-form-wrapper { max-width: 600px; margin: 0 auto; background: var(--white-pure); border-radius: var(--border-radius); padding: 40px; box-shadow: var(--shadow-md); }
+        .form-group { margin-bottom: 20px; }
+        .form-control { width: 100%; padding: 14px; border: 1px solid var(--gray-light); border-radius: var(--border-radius-sm); font-family: 'Tajawal', sans-serif; transition: var(--transition); }
+        .form-control:focus { outline: none; border-color: var(--primary-light); box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); }
+        select.form-control { cursor: pointer; }
+        
+        footer { background: var(--white-pure); padding: 60px 0 30px; border-top: 1px solid var(--gray-light); margin-top: 60px; }
+        .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; margin-bottom: 40px; }
+        .footer-logo { display: flex; align-items: center; gap: 12px; }
+        .footer-logo .logo-icon { width: 45px; height: 45px; }
+        .footer-logo h3 { font-size: 1rem; margin: 0; }
+        .footer-logo p { font-size: 0.7rem; color: var(--gray); }
+        .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+        .footer-links a { text-decoration: none; color: var(--gray); transition: var(--transition); }
+        .footer-links a:hover { color: var(--primary); }
+        .social-links { display: flex; gap: 12px; }
+        .social-links a { width: 40px; height: 40px; background: var(--white-soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); transition: var(--transition); text-decoration: none; }
+        .social-links a:hover { background: var(--primary-light); color: white; transform: translateY(-3px); }
+        .footer-copyright { text-align: center; padding-top: 30px; border-top: 1px solid var(--gray-light); }
+        .footer-copyright p { color: var(--gray); font-size: 0.8rem; }
+        
+        .scroll-progress { position: fixed; top: 0; right: 0; width: 0; height: 3px; background: var(--brand-gradient); z-index: 1001; transition: width 0.1s; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        
+        /* أنماط نظام المبيعات */
+        .cart-icon {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 55px;
+            height: 55px;
+            background: var(--brand-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            z-index: 1001;
+            transition: var(--transition);
+        }
+        .cart-icon:hover { transform: scale(1.1); }
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--accent);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: bold;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            left: -400px;
+            width: 400px;
+            height: 100vh;
+            background: var(--white-pure);
+            box-shadow: var(--shadow-lg);
+            z-index: 1002;
+            transition: left 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .cart-sidebar.open { left: 0; }
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1001;
+            visibility: hidden;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .cart-overlay.open { visibility: visible; opacity: 1; }
+        .cart-header { padding: 20px; border-bottom: 1px solid var(--gray-light); display: flex; justify-content: space-between; align-items: center; }
+        .cart-header h3 { margin: 0; color: var(--primary); }
+        .close-cart { background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--gray); }
+        .cart-items { flex: 1; overflow-y: auto; padding: 20px; }
+        .cart-item { display: grid; grid-template-columns: 1fr auto; gap: 10px; padding: 15px 0; border-bottom: 1px solid var(--gray-light); }
+        .cart-item-info h4 { margin: 0 0 5px; font-size: 0.95rem; }
+        .negotiable-badge, .custom-badge { display: inline-block; font-size: 0.65rem; padding: 2px 8px; border-radius: 20px; margin-left: 5px; }
+        .negotiable-badge { background: #fef3c7; color: #d97706; }
+        .custom-badge { background: #dbeafe; color: #2563eb; }
+        .cart-item-note { font-size: 0.7rem; color: var(--gray); margin-top: 5px; }
+        .price-input-group { display: flex; align-items: center; gap: 5px; }
+        .custom-price-input { width: 80px; padding: 4px 8px; border: 1px solid var(--gray-light); border-radius: 8px; }
+        .quantity-control { display: flex; align-items: center; gap: 8px; }
+        .qty-btn { width: 28px; height: 28px; border: 1px solid var(--gray-light); background: var(--white-soft); border-radius: 8px; cursor: pointer; }
+        .remove-item { background: none; border: none; color: #ef4444; cursor: pointer; font-size: 1rem; }
+        .cart-footer { padding: 20px; border-top: 1px solid var(--gray-light); }
+        .cart-total { display: flex; justify-content: space-between; font-weight: bold; font-size: 1.1rem; margin-bottom: 10px; }
+        .negotiable-info { font-size: 0.75rem; color: #d97706; margin-bottom: 15px; }
+        .checkout-btn { width: 100%; padding: 12px; background: var(--brand-gradient); color: white; border: none; border-radius: 40px; font-weight: bold; cursor: pointer; }
+        .empty-cart { text-align: center; padding: 40px; color: var(--gray); }
+        .empty-cart i { font-size: 3rem; margin-bottom: 10px; display: block; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1100; align-items: center; justify-content: center; }
+        .modal-content { background: var(--white-pure); border-radius: var(--border-radius); max-width: 500px; width: 90%; max-height: 90vh; overflow-y: auto; }
+        .modal-large { max-width: 800px; }
+        .modal-header { padding: 20px; border-bottom: 1px solid var(--gray-light); display: flex; justify-content: space-between; align-items: center; }
+        .modal-body { padding: 20px; }
+        .modal-footer { padding: 20px; border-top: 1px solid var(--gray-light); display: flex; justify-content: flex-end; gap: 10px; }
+        .checkout-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .checkout-items { margin: 15px 0; }
+        .checkout-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed var(--gray-light); }
+        .checkout-total { display: flex; justify-content: space-between; font-weight: bold; font-size: 1.1rem; padding-top: 15px; border-top: 2px solid var(--gray-light); margin-top: 15px; }
+        .checkout-note { font-size: 0.7rem; color: var(--gray); margin-top: 15px; }
+        .cart-notification { position: fixed; bottom: 100px; left: 100px; background: var(--white-pure); border-right: 4px solid var(--primary); padding: 12px 20px; border-radius: 12px; box-shadow: var(--shadow-lg); z-index: 10000; transform: translateX(-120%); transition: transform 0.3s; }
+        .cart-notification.show { transform: translateX(0); }
+        .price-buttons { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+        
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            .nav-links { display: none; position: absolute; top: 70px; right: 0; left: 0; background: var(--white-pure); flex-direction: column; padding: 20px; gap: 10px; box-shadow: var(--shadow-md); border-radius: 0 0 20px 20px; z-index: 999; }
+            .nav-links.show { display: flex; }
+            .mobile-menu-btn { display: block; }
+            .services-grid, .immersive-grid, .portfolio-grid, .stats-grid { grid-template-columns: 1fr; }
+            .footer-inner { flex-direction: column; text-align: center; }
+            .hero h1 { font-size: 1.8rem; }
+            .cart-sidebar { width: 100%; left: -100%; }
+            .checkout-grid { grid-template-columns: 1fr; }
+            .cart-notification { left: 20px; right: 20px; bottom: 100px; text-align: center; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .btn-primary, .btn-outline { width: 100%; max-width: 250px; }
+            .service-card, .immersive-card { padding: 20px; }
+            .contact-form-wrapper { padding: 25px; }
+            .portfolio-image { height: 200px; }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <div class="visual-bg">
+        <div class="pattern-dots"></div>
+        <div class="gradient-orb"></div>
+        <div class="gradient-orb-2"></div>
+    </div>
+    
+    <header id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo">
+                    <div class="logo-icon"><i class="fas fa-gem"></i></div>
+                    <div>
+                        <h1>BRILLIANT SERVICES</h1>
+                        <span>حلول برمجية وتقنيات غامرة - البحرين</span>
+                    </div>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#" class="active">الرئيسية</a></li>
+                    <li><a href="#software-services">الخدمات البرمجية</a></li>
+                    <li><a href="#immersive">التقنيات الغامرة</a></li>
+                    <li><a href="#portfolio">أعمالنا</a></li>
+                    <li><a href="#contact">تواصل</a></li>
+                    <li><a href="orders.html">طلباتي</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>حلول <span>رقمية متكاملة</span><br>وتقنيات <span>غامرة</span></h1>
+            <p>نقدم أحدث الحلول البرمجية وتقنيات الواقع الافتراضي والذكاء الاصطناعي في البحرين، لتحويل أفكاركم إلى واقع رقمي مبتكر</p>
+            <div class="hero-buttons">
+                <a href="#software-services" class="btn-primary"><i class="fas fa-code"></i> خدماتنا البرمجية</a>
+                <a href="#portfolio" class="btn-outline"><i class="fas fa-star"></i> أعمالنا</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================ -->
+    <!-- الخدمات البرمجية Software Services -->
+    <!-- ============================================ -->
+    <section id="software-services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">الخدمات <span>البرمجية</span></h2>
+            <p class="section-subtitle">نقدم أحدث الحلول البرمجية لتلبية احتياجات عملك</p>
+            
+            <div class="services-grid reveal">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <h3>تطوير البرمجيات</h3>
+                    <p>برمجيات مخصصة حسب احتياج عملك باستخدام أحدث التقنيات</p>
+                    <div class="price-buttons">
+                        <button class="btn-sm" onclick="openNegotiationModal('software-dev', 'تطوير برمجيات مخصصة', 'حسب الطلب')"><i class="fas fa-comment-dollar"></i> طلب عرض سعر</button>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-globe"></i></div>
+                    <h3>تطوير تطبيقات الويب</h3>
+                    <p>تطبيقات ويب تفاعلية عالية الأداء باستخدام React, Vue.js</p>
+                    <div class="price-buttons">
+                        <button class="btn-sm" onclick="openNegotiationModal('webapp-dev', 'تطوير تطبيقات ويب', 'حسب الطلب')"><i class="fas fa-comment-dollar"></i> طلب عرض سعر</button>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>تطوير تطبيقات الموبايل</h3>
+                    <p>تطبيقات iOS و Android باستخدام Flutter و React Native</p>
+                    <div class="price-buttons">
+                        <button class="btn-sm" onclick="openNegotiationModal('mobileapp-dev', 'تطوير تطبيقات موبايل', 'حسب الطلب')"><i class="fas fa-comment-dollar"></i> طلب عرض سعر</button>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fab fa-zoho"></i></div>
+                    <h3>استشارات Zoho</h3>
+                    <p>استشارات متخصصة في تطبيقات Zoho، تثبيت، تخصيص، وتدريب</p>
+                    <div class="price-buttons">
+                        <button class="btn-sm" onclick="addToCart('zoho-one')"><i class="fas fa-cart-plus"></i> Zoho One - $37/شهر</button>
+                        <button class="btn-sm" onclick="openNegotiationModal('zoho-one', 'Zoho One', '37$/مستخدم/شهر')"><i class="fas fa-comment-dollar"></i> تفاوض</button>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>استشارات Odoo</h3>
+                    <p>خدمات استشارية متكاملة لأنظمة Odoo ERP</p>
+                    <div class="price-buttons">
+                        <button class="btn-sm" onclick="addToCart('odoo-starter')"><i class="fas fa-cart-plus"></i> Odoo Starter - $3,999</button>
+                        <button class="btn-sm" onclick="openNegotiationModal('odoo-starter', 'Odoo Starter', '3,999$')"><i class="fas fa-comment-dollar"></i> تفاوض</button>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>تطوير أنظمة ERP</h3>
+                    <p>أنظمة ERP مخصصة بالكامل تناسب حجم ونشاط مؤسستك</p>
+                    <div class="price-buttons">
+                        <button class="btn-sm" onclick="openNegotiationModal('odoo-enterprise', 'ERP مخصص', 'حسب الطلب')"><i class="fas fa-comment-dollar"></i> طلب عرض سعر</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================ -->
+    <!-- التقنيات الغامرة Immersive Technologies -->
+    <!-- ============================================ -->
+    <section id="immersive" class="immersive-section">
+        <div class="container">
+            <h2 class="section-title">التقنيات <span>الغامرة</span></h2>
+            <p class="section-subtitle">أحدث حلول الواقع الافتراضي والواقع المعزز والذكاء الاصطناعي</p>
+            
+            <div class="immersive-grid reveal">
+                <div class="immersive-card">
+                    <div class="immersive-icon vr-icon"><i class="fas fa-vr-cardboard"></i></div>
+                    <h3>محاكاة التدريب بالواقع الافتراضي</h3>
+                    <p>برامج تدريبية غامرة لمحاكاة بيئات عمل حقيقية</p>
+                    <div class="price-buttons">
+                        <button class="btn-sm" onclick="openNegotiationModal('vr-training', 'محاكاة التدريب VR', 'حسب الطلب')"><i class="fas fa-comment-dollar"></i> طلب عرض سعر</button>
+                    </div>
+                </div>
+                <div class="immersive-card">
+                    <div class="immersive-icon dt-icon"><i class="fas fa-cube"></i></div>
+                    <h3>حلول التوأم الرقمي</h3>
+                    <p>نسخ رقمية افتراضية للأصول والعمليات الفعلية</p>
+                    <div class="price-buttons">
+                        <button class="btn-sm" onclick="openNegotiationModal('digital-twin', 'حلول التوأم الرقمي', 'حسب الطلب')"><i class="fas fa-comment-dollar"></i> طلب عرض سعر</button>
+                    </div>
+                </div>
+                <div class="immersive-card">
+                    <div class="immersive-icon ai-icon"><i class="fas fa-brain"></i></div>
+                    <h3>حلول الذكاء الاصطناعي</h3>
+                    <p>تطبيقات AI متقدمة لتحليل البيانات والأتمتة الذكية</p>
+                    <div class="price-buttons">
+                        <button class="btn-sm" onclick="openNegotiationModal('ai-solutions', 'حلول الذكاء الاصطناعي', 'حسب الطلب')"><i class="fas fa-comment-dollar"></i> طلب عرض سعر</button>
+                    </div>
+                </div>
+                <div class="immersive-card">
+                    <div class="immersive-icon"><i class="fas fa-building"></i></div>
+                    <h3>جولات افتراضية للعقارات</h3>
+                    <p>جولات تفاعلية ثلاثية الأبعاد للعقارات</p>
+                    <div class="price-buttons">
+                        <button class="btn-sm" onclick="openNegotiationModal('virtual-tour', 'جولات افتراضية', 'حسب الطلب')"><i class="fas fa-comment-dollar"></i> طلب عرض سعر</button>
+                    </div>
+                </div>
+                <div class="immersive-card">
+                    <div class="immersive-icon ar-icon"><i class="fas fa-ar"></i></div>
+                    <h3>حلول الواقع المعزز الصناعية</h3>
+                    <p>تطبيقات AR للصيانة عن بعد والتدريب الميداني</p>
+                    <div class="price-buttons">
+                        <button class="btn-sm" onclick="openNegotiationModal('ar-industrial', 'حلول AR الصناعية', 'حسب الطلب')"><i class="fas fa-comment-dollar"></i> طلب عرض سعر</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================ -->
+    <!-- أعمالنا - Portfolio -->
+    <!-- ============================================ -->
+  <!-- ============================================ -->
+<!-- أعمالنا - Portfolio مع صور من الإنترنت -->
+<!-- ============================================ -->
+<section id="portfolio" class="portfolio-section">
+    <div class="container">
+        <h2 class="section-title">أعمالنا <span>المميزة</span></h2>
+        <p class="section-subtitle">نفخر بعرض نماذج من مشاريعنا الناجحة في مجالات التقنيات الحديثة</p>
+        
+        <div class="portfolio-filters">
+            <button class="filter-btn active" data-filter="all">الكل</button>
+            <button class="filter-btn" data-filter="vr">الواقع الافتراضي VR</button>
+            <button class="filter-btn" data-filter="ai">الذكاء الاصطناعي AI</button>
+            <button class="filter-btn" data-filter="ar">الواقع المعزز AR</button>
+            <button class="filter-btn" data-filter="software">البرمجيات</button>
+            <button class="filter-btn" data-filter="web">تطوير الويب</button>
+        </div>
+        
+        <div class="portfolio-grid reveal" id="portfolioGrid">
+            <!-- مشروع VR 1 - محاكاة تدريب الطيران باستخدام VR -->
+            <div class="portfolio-item" data-category="vr">
+                <div class="portfolio-image" style="background-image: url('https://www.jbsa.mil/Portals/100/Documents/News/2025/VR_Training_SimX.jpg?ver=2025-01'); background-size: cover; background-position: center;">
+                    <div class="portfolio-overlay">
+                        <a href="#" onclick="showProjectDetail('vr-flight-sim')"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-category category-vr">الواقع الافتراضي VR</span>
+                    <h3>محاكاة تدريب الطيران</h3>
+                    <p>نظام تدريب غامر لشركة طيران كبرى، يتضمن محاكاة كاملة لكابينة القيادة وسيناريوهات الطوارئ باستخدام أحدث تقنيات VR.</p>
+                    <div class="portfolio-tech">
+                        <span class="tech-tag">Unity 3D</span>
+                        <span class="tech-tag">VR Headsets</span>
+                        <span class="tech-tag">Haptic Feedback</span>
+                        <span class="tech-tag">Real-time Physics</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- مشروع VR 2 - جولة افتراضية في المتحف -->
+            <div class="portfolio-item" data-category="vr">
+                <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?w=800&h=500&fit=crop'); background-size: cover; background-position: center;">
+                    <div class="portfolio-overlay">
+                        <a href="#" onclick="showProjectDetail('vr-museum')"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-category category-vr">الواقع الافتراضي VR</span>
+                    <h3>جولة افتراضية في المتحف الوطني</h3>
+                    <p>تجربة غامرة تسمح للزوار باستكشاف المتحف عن بعد مع مؤثرات صوتية وبصرية واقعية وتفاعل مع المعروضات.</p>
+                    <div class="portfolio-tech">
+                        <span class="tech-tag">Unreal Engine 5</span>
+                        <span class="tech-tag">3D Scanning</span>
+                        <span class="tech-tag">WebVR</span>
+                        <span class="tech-tag">Photogrammetry</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- مشروع AI 1 - تحليل البيانات الطبية -->
+            <div class="portfolio-item" data-category="ai">
+                <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop'); background-size: cover; background-position: center;">
+                    <div class="portfolio-overlay">
+                        <a href="#" onclick="showProjectDetail('ai-medical')"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-category category-ai">الذكاء الاصطناعي AI</span>
+                    <h3>منصة تحليل البيانات الطبية</h3>
+                    <p>نظام AI متقدم لتحليل البيانات الطبية والتنبؤ بالأمراض وتحسين جودة الرعاية الصحية باستخدام تقنيات التعلم العميق.</p>
+                    <div class="portfolio-tech">
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Predictive Analytics</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- مشروع AI 2 - روبوت محادثة ذكي -->
+            <div class="portfolio-item" data-category="ai">
+                <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&h=500&fit=crop'); background-size: cover; background-position: center;">
+                    <div class="portfolio-overlay">
+                        <a href="#" onclick="showProjectDetail('ai-chatbot')"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-category category-ai">الذكاء الاصطناعي AI</span>
+                    <h3>روبوت محادثة ذكي لخدمة العملاء</h3>
+                    <p>Chatbot متطور باستخدام تقنيات معالجة اللغة الطبيعية (NLP) لفهم واستجابة طلبات العملاء باللغة العربية بطلاقة.</p>
+                    <div class="portfolio-tech">
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">GPT-4</span>
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">Arabic Language Models</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- مشروع AR - صيانة المعدات الصناعية -->
+            <div class="portfolio-item" data-category="ar">
+                <div class="portfolio-image" style="background-image: url('https://www.igd.fraunhofer.de/content/dam/igd/en/news/ar-industrie-4-0/AR_Industrie4.0_Header.jpg'); background-size: cover; background-position: center;">
+                    <div class="portfolio-overlay">
+                        <a href="#" onclick="showProjectDetail('ar-maintenance')"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-category category-ar">الواقع المعزز AR</span>
+                    <h3>تطبيق AR لصيانة المعدات الصناعية</h3>
+                    <p>حل مبتكر بتقنية الواقع المعزز يعرض تعليمات الصيانة والإصلاح مباشرة على المعدات باستخدام الهاتف الذكي أو نظارات AR.</p>
+                    <div class="portfolio-tech">
+                        <span class="tech-tag">ARKit</span>
+                        <span class="tech-tag">ARCore</span>
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">3D Tracking</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- مشروع برمجيات - نظام ERP -->
+            <div class="portfolio-item" data-category="software">
+                <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop'); background-size: cover; background-position: center;">
+                    <div class="portfolio-overlay">
+                        <a href="#" onclick="showProjectDetail('erp-system')"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-category category-software">تطوير البرمجيات</span>
+                    <h3>نظام ERP لشركة صناعية كبرى</h3>
+                    <p>نظام متكامل لإدارة الموارد والمخزون والإنتاج لشركة رائدة في القطاع الصناعي، مع تقارير تحليلية متقدمة.</p>
+                    <div class="portfolio-tech">
+                        <span class="tech-tag">Odoo</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- مشروع ويب - منصة تجارة إلكترونية -->
+            <div class="portfolio-item" data-category="web">
+                <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop'); background-size: cover; background-position: center;">
+                    <div class="portfolio-overlay">
+                        <a href="#" onclick="showProjectDetail('ecommerce-platform')"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-category category-web">تطوير الويب</span>
+                    <h3>منصة التجارة الإلكترونية المتكاملة</h3>
+                    <p>متجر إلكتروني متطور مع نظام دفع وشحن ذكي، وأدوات تحليل متقدمة، ولوحة تحكم لإدارة المنتجات والمبيعات.</p>
+                    <div class="portfolio-tech">
+                        <span class="tech-tag">React.js</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Stripe API</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- مشروع التوأم الرقمي - Digital Twin -->
+            <div class="portfolio-item" data-category="ar">
+                <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&h=500&fit=crop'); background-size: cover; background-position: center;">
+                    <div class="portfolio-overlay">
+                        <a href="#" onclick="showProjectDetail('digital-twin')"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-category category-ar">التوأم الرقمي</span>
+                    <h3>حلول التوأم الرقمي للمصانع الذكية</h3>
+                    <p>إنشاء نسخ رقمية افتراضية للمصانع والعمليات الإنتاجية لمحاكاة وتحليل الأداء والتنبؤ بالمشكلات قبل حدوثها.</p>
+                    <div class="portfolio-tech">
+                        <span class="tech-tag">Digital Twin</span>
+                        <span class="tech-tag">IoT Sensors</span>
+                        <span class="tech-tag">3D Modeling</span>
+                        <span class="tech-tag">Real-time Analytics</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- مشروع AI لتحليل المبيعات -->
+            <div class="portfolio-item" data-category="ai">
+                <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop'); background-size: cover; background-position: center;">
+                    <div class="portfolio-overlay">
+                        <a href="#" onclick="showProjectDetail('ai-sales')"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-category category-ai">الذكاء الاصطناعي AI</span>
+                    <h3>لوحة تحليل المبيعات والتوقعات الذكية</h3>
+                    <p>Dashboard تفاعلي مع توقعات AI لاتجاهات المبيعات وتحليل سلوك العملاء، يساعد في اتخاذ القرارات الاستراتيجية.</p>
+                    <div class="portfolio-tech">
+                        <span class="tech-tag">Time Series Analysis</span>
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Forecast Models</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- ============================================ -->
+    <!-- إحصائيات الشركة -->
+    <!-- ============================================ -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid reveal">
+                <div class="stat-card"><div class="stat-number" data-count="150">0</div><p>مشروع ناجح</p></div>
+                <div class="stat-card"><div class="stat-number" data-count="50">0</div><p>عميل سعيد</p></div>
+                <div class="stat-card"><div class="stat-number" data-count="98">0</div><p>نسبة رضا %</p></div>
+                <div class="stat-card"><div class="stat-number" data-count="24">0</div><p>فريق عمل</p></div>
+                <div class="stat-card"><div class="stat-number" data-count="11">0</div><p>خدمات متكاملة</p></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================ -->
+    <!-- نموذج الاتصال -->
+    <!-- ============================================ -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">تواصل <span>مع خبرائنا</span></h2>
+            <p class="section-subtitle">احصل على استشارة مجانية واعرف الحل المناسب لعملك</p>
+            
+            <div class="contact-form-wrapper reveal">
+                <form id="contactForm">
+                    <div class="form-group"><input type="text" id="name" class="form-control" placeholder="الاسم الكامل" required></div>
+                    <div class="form-group"><input type="email" id="email" class="form-control" placeholder="البريد الإلكتروني" required></div>
+                    <div class="form-group"><input type="tel" id="phone" class="form-control" placeholder="رقم الهاتف"></div>
+                    <div class="form-group">
+                        <select id="serviceType" class="form-control">
+                            <option value="">اختر الخدمة</option>
+                            <optgroup label="الخدمات البرمجية">
+                                <option value="تطوير البرمجيات">تطوير البرمجيات</option>
+                                <option value="تطوير تطبيقات الويب">تطوير تطبيقات الويب</option>
+                                <option value="تطوير تطبيقات الموبايل">تطوير تطبيقات الموبايل</option>
+                                <option value="استشارات Zoho">استشارات Zoho</option>
+                                <option value="استشارات Odoo">استشارات Odoo</option>
+                                <option value="تطوير أنظمة ERP">تطوير أنظمة ERP</option>
+                            </optgroup>
+                            <optgroup label="التقنيات الغامرة">
+                                <option value="محاكاة التدريب VR">محاكاة التدريب VR</option>
+                                <option value="حلول التوأم الرقمي">حلول التوأم الرقمي</option>
+                                <option value="حلول الذكاء الاصطناعي">حلول الذكاء الاصطناعي</option>
+                                <option value="جولات افتراضية">جولات افتراضية</option>
+                                <option value="حلول AR الصناعية">حلول AR الصناعية</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="form-group"><textarea id="message" rows="4" class="form-control" placeholder="تفاصيل طلبك..."></textarea></div>
+                    <button type="submit" class="btn-primary" style="width: 100%;"><i class="fas fa-paper-plane"></i> إرسال الطلب</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================ -->
+    <!-- الفوتر -->
+    <!-- ============================================ -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo">
+                    <div class="logo-icon"><i class="fas fa-gem"></i></div>
+                    <div><h3>BRILLIANT SERVICES</h3><p>حلول برمجية وتقنيات غامرة - البحرين</p></div>
+                </div>
+                <div class="footer-links">
+                    <a href="#">الرئيسية</a>
+                    <a href="#software-services">الخدمات البرمجية</a>
+                    <a href="#portfolio">أعمالنا</a>
+                    <a href="orders.html">طلباتي</a>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-behance"></i></a>
+                </div>
+            </div>
+            <div class="footer-copyright"><p>جميع الحقوق محفوظة BRILLIANT SERVICES © 2024 - مملكة البحرين</p></div>
+        </div>
+    </footer>
+    
+    <!-- عناصر نظام المبيعات -->
+    <div class="cart-icon" onclick="toggleCartSidebar()">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCartSidebar()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> سلة المشتريات</h3>
+            <button class="close-cart" onclick="toggleCartSidebar()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart"><i class="fas fa-shopping-cart"></i><p>سلة المشتريات فارغة</p></div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>الإجمالي:</span><span>$<span id="cartTotal">0</span></span></div>
+            <div class="negotiable-info" id="negotiableBadge" style="display: none;"><i class="fas fa-comment-dollar"></i> بعض المنتجات قابلة للمناقشة</div>
+            <button class="checkout-btn" onclick="openCheckoutModal()">إتمام الطلب <i class="fas fa-arrow-left"></i></button>
+        </div>
+    </div>
+    
+    <!-- نافذة مناقشة السعر -->
+    <div class="modal" id="negotiationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-comment-dollar"></i> مناقشة السعر</h3>
+                <button class="modal-close" onclick="closeNegotiationModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>المنتج: <strong id="modalProductName"></strong></p>
+                <input type="hidden" id="modalProductId">
+                <div class="form-group"><label>السعر الحالي:</label><span id="currentPriceSpan" class="current-price" style="display: block; margin-top: 5px;"></span></div>
+                <div class="form-group"><label>السعر المقترح:</label><input type="number" id="suggestedPrice" class="form-control" step="100" min="0"></div>
+                <div class="form-group"><label>ملاحظات إضافية:</label><textarea id="negotiationMessage" class="form-control" rows="3" placeholder="اذكر سبب طلب المناقشة أو أي متطلبات خاصة..."></textarea></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-outline" onclick="closeNegotiationModal()">إلغاء</button>
+                <button class="btn-primary" onclick="sendNegotiationRequest()">إرسال طلب مناقشة</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- نافذة إتمام الطلب -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3><i class="fas fa-file-invoice"></i> إتمام الطلب</h3>
+                <button class="modal-close" onclick="closeCheckoutModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="checkout-grid">
+                    <div class="checkout-form">
+                        <h4>معلومات الاتصال</h4>
+                        <div class="form-group"><input type="text" id="checkoutName" class="form-control" placeholder="الاسم الكامل *" required></div>
+                        <div class="form-group"><input type="email" id="checkoutEmail" class="form-control" placeholder="البريد الإلكتروني *" required></div>
+                        <div class="form-group"><input type="tel" id="checkoutPhone" class="form-control" placeholder="رقم الهاتف"></div>
+                        <div class="form-group"><input type="text" id="checkoutCompany" class="form-control" placeholder="اسم الشركة"></div>
+                        <div class="form-group"><textarea id="checkoutNotes" class="form-control" rows="3" placeholder="ملاحظات إضافية..."></textarea></div>
+                    </div>
+                    <div class="checkout-summary">
+                        <h4>ملخص الطلب</h4>
+                        <div class="checkout-items" id="checkoutItems"></div>
+                        <div class="checkout-total"><span>الإجمالي:</span><span>$<span id="checkoutTotal">0</span></span></div>
+                        <p class="checkout-note"><i class="fas fa-info-circle"></i> سيتم التواصل معك لتأكيد الطلب والتفاصيل</p>
+                    </div>
+                </div>
+                       </div>
+            <div class="modal-footer">
+                <button class="btn-outline" onclick="closeCheckoutModal()">رجوع</button>
+                <button class="btn-primary" onclick="submitOrder()">تأكيد الطلب <i class="fas fa-check"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // ============================================
+        // نظام المبيعات المتكامل
+        // ============================================
+        
+        let cart = JSON.parse(localStorage.getItem('brilliant_cart')) || [];
+        
+        function saveCart() {
+            localStorage.setItem('brilliant_cart', JSON.stringify(cart));
+            updateCartCount();
+            updateCartSidebar();
+        }
+        
+        function updateCartCount() {
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const cartCountElements = document.querySelectorAll('.cart-count');
+            cartCountElements.forEach(el => {
+                el.textContent = count;
+                el.style.display = count > 0 ? 'flex' : 'none';
+            });
+        }
+        
+        function addToCart(productId, customPrice = null, customQuantity = 1, customNote = '') {
+            const products = {
+                'odoo-starter': { name: 'Odoo Starter', basePrice: 3999, currency: '$', negotiable: true },
+                'odoo-professional': { name: 'Odoo Professional', basePrice: 7999, currency: '$', negotiable: true },
+                'odoo-enterprise': { name: 'Odoo Enterprise', basePrice: 14999, currency: '$', negotiable: true },
+                'zoho-one': { name: 'Zoho One', basePrice: 37, priceType: 'per_user_month', currency: '$', negotiable: true },
+                'zoho-crm': { name: 'Zoho CRM', basePrice: 14, priceType: 'per_user_month', currency: '$', negotiable: false },
+                'web-business': { name: 'حزمة تطوير مواقع - أعمال', basePrice: 2499, currency: '$', negotiable: true },
+                'identity-logo': { name: 'تصميم شعار احترافي', basePrice: 299, currency: '$', negotiable: true },
+                'identity-complete': { name: 'باقة الهوية المتكاملة', basePrice: 799, currency: '$', negotiable: true },
+                'software-dev': { name: 'تطوير برمجيات مخصصة', basePrice: 0, currency: '$', negotiable: true, isCustom: true },
+                'webapp-dev': { name: 'تطوير تطبيقات ويب', basePrice: 0, currency: '$', negotiable: true, isCustom: true },
+                'mobileapp-dev': { name: 'تطوير تطبيقات موبايل', basePrice: 0, currency: '$', negotiable: true, isCustom: true },
+                'vr-training': { name: 'محاكاة التدريب VR', basePrice: 0, currency: '$', negotiable: true, isCustom: true },
+                'digital-twin': { name: 'حلول التوأم الرقمي', basePrice: 0, currency: '$', negotiable: true, isCustom: true },
+                'ai-solutions': { name: 'حلول الذكاء الاصطناعي', basePrice: 0, currency: '$', negotiable: true, isCustom: true },
+                'virtual-tour': { name: 'جولات افتراضية', basePrice: 0, currency: '$', negotiable: true, isCustom: true },
+                'ar-industrial': { name: 'حلول AR الصناعية', basePrice: 0, currency: '$', negotiable: true, isCustom: true }
+            };
+            
+            const product = products[productId];
+            if (!product) return false;
+            
+            const existingItem = cart.find(item => item.id === productId);
+            if (existingItem) {
+                existingItem.quantity += customQuantity;
+                if (customPrice) existingItem.customPrice = customPrice;
+                if (customNote) existingItem.customNote = customNote;
+            } else {
+                cart.push({
+                    id: productId,
+                    name: product.name,
+                    basePrice: product.basePrice,
+                    priceType: product.priceType,
+                    currency: product.currency,
+                    negotiable: product.negotiable,
+                    isCustom: product.isCustom || false,
+                    quantity: customQuantity,
+                    customPrice: customPrice || null,
+                    customNote: customNote || ''
+                });
+            }
+            saveCart();
+            showNotification(`✅ تم إضافة ${product.name} إلى سلة المشتريات`);
+            return true;
+        }
+        
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            saveCart();
+            showNotification('🗑️ تم إزالة المنتج من السلة');
+        }
+        
+        function updateQuantity(productId, quantity) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                if (quantity <= 0) removeFromCart(productId);
+                else { item.quantity = quantity; saveCart(); }
+            }
+        }
+        
+        function updateCustomPrice(productId, price) {
+            const item = cart.find(item => item.id === productId);
+            if (item && item.negotiable) { item.customPrice = parseFloat(price); saveCart(); }
+        }
+        
+        function getItemFinalPrice(item) { return item.customPrice || item.basePrice; }
+        function getCartTotal() { return cart.reduce((total, item) => total + (getItemFinalPrice(item) * item.quantity), 0); }
+        
+        function updateCartSidebar() {
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            const negotiableBadge = document.getElementById('negotiableBadge');
+            if (!cartItems) return;
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = `<div class="empty-cart"><i class="fas fa-shopping-cart"></i><p>سلة المشتريات فارغة</p><small>أضف منتجات لتبدأ</small></div>`;
+                if (cartTotal) cartTotal.textContent = '0';
+                if (negotiableBadge) negotiableBadge.style.display = 'none';
+                return;
+            }
+            
+            let html = '';
+            let hasNegotiable = false;
+            cart.forEach(item => {
+                const price = getItemFinalPrice(item);
+                if (item.negotiable) hasNegotiable = true;
+                html += `
+                    <div class="cart-item" data-id="${item.id}">
+                        <div class="cart-item-info">
+                            <h4>${item.name}</h4>
+                            ${item.isCustom ? '<span class="custom-badge">حسب الطلب</span>' : ''}
+                            ${item.negotiable ? '<span class="negotiable-badge">قابل للمناقشة</span>' : ''}
+                            ${item.customNote ? `<p class="cart-item-note"><i class="fas fa-comment"></i> ${item.customNote}</p>` : ''}
+                        </div>
+                        <div class="cart-item-price">
+                            ${item.negotiable ? `
+                                <div class="price-input-group">
+                                    <input type="number" class="custom-price-input" value="${price}" step="100" min="0" data-id="${item.id}">
+                                    <span>${item.currency}</span>
+                                </div>
+                            ` : `<span class="item-price">${item.currency}${price}</span>`}
+                            ${item.priceType ? `<small>/${item.priceType === 'per_user_month' ? 'مستخدم/شهر' : (item.priceType === 'monthly' ? 'شهر' : '')}</small>` : ''}
+                        </div>
+                        <div class="cart-item-actions">
+                            <div class="quantity-control">
+                                <button class="qty-btn minus" data-id="${item.id}">-</button>
+                                <span class="qty-value">${item.quantity}</span>
+                                <button class="qty-btn plus" data-id="${item.id}">+</button>
+                            </div>
+                            <button class="remove-item" data-id="${item.id}"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                        <div class="cart-item-total">${item.currency}${(price * item.quantity).toFixed(2)}</div>
+                    </div>
+                `;
+            });
+            cartItems.innerHTML = html;
+            if (cartTotal) cartTotal.textContent = getCartTotal().toFixed(2);
+            if (negotiableBadge) negotiableBadge.style.display = hasNegotiable ? 'inline-flex' : 'none';
+            
+            document.querySelectorAll('.qty-btn.minus').forEach(btn => btn.addEventListener('click', () => { const id = btn.dataset.id; const item = cart.find(i => i.id === id); if (item) updateQuantity(id, item.quantity - 1); }));
+            document.querySelectorAll('.qty-btn.plus').forEach(btn => btn.addEventListener('click', () => { const id = btn.dataset.id; const item = cart.find(i => i.id === id); if (item) updateQuantity(id, item.quantity + 1); }));
+            document.querySelectorAll('.remove-item').forEach(btn => btn.addEventListener('click', () => removeFromCart(btn.dataset.id)));
+            document.querySelectorAll('.custom-price-input').forEach(input => input.addEventListener('change', () => updateCustomPrice(input.dataset.id, parseFloat(input.value))));
+        }
+        
+        function toggleCartSidebar() {
+            const sidebar = document.getElementById('cartSidebar');
+            const overlay = document.getElementById('cartOverlay');
+            if (sidebar) sidebar.classList.toggle('open');
+            if (overlay) overlay.classList.toggle('open');
+            updateCartSidebar();
+        }
+        
+        function showNotification(message) {
+            const notif = document.createElement('div');
+            notif.className = 'cart-notification';
+            notif.innerHTML = message;
+            document.body.appendChild(notif);
+            setTimeout(() => notif.classList.add('show'), 10);
+            setTimeout(() => { notif.classList.remove('show'); setTimeout(() => notif.remove(), 300); }, 3000);
+        }
+        
+        function openNegotiationModal(productId, productName, currentPrice) {
+            const modal = document.getElementById('negotiationModal');
+            const modalProductName = document.getElementById('modalProductName');
+            const modalProductId = document.getElementById('modalProductId');
+            const currentPriceSpan = document.getElementById('currentPriceSpan');
+            const suggestedPrice = document.getElementById('suggestedPrice');
+            if (modal) {
+                modalProductName.textContent = productName;
+                modalProductId.value = productId;
+                currentPriceSpan.textContent = currentPrice;
+                suggestedPrice.value = currentPrice.toString().replace(/[^0-9.-]/g, '');
+                modal.style.display = 'flex';
+            }
+        }
+        
+        function closeNegotiationModal() { const modal = document.getElementById('negotiationModal'); if (modal) modal.style.display = 'none'; }
+        
+        function sendNegotiationRequest() {
+            const productId = document.getElementById('modalProductId')?.value;
+            const productName = document.getElementById('modalProductName')?.textContent;
+            const suggestedPrice = document.getElementById('suggestedPrice')?.value;
+            const message = document.getElementById('negotiationMessage')?.value;
+            if (!productId) return;
+            addToCart(productId, parseFloat(suggestedPrice), 1, message);
+            closeNegotiationModal();
+        }
+        
+        function openCheckoutModal() {
+            if (cart.length === 0) { showNotification('سلة المشتريات فارغة، أضف منتجات أولاً'); return; }
+            const modal = document.getElementById('checkoutModal');
+            const checkoutItems = document.getElementById('checkoutItems');
+            const checkoutTotal = document.getElementById('checkoutTotal');
+            if (!modal) return;
+            let itemsHtml = '';
+            cart.forEach(item => { const price = getItemFinalPrice(item); itemsHtml += `<div class="checkout-item"><span>${item.name} ${item.quantity > 1 ? `x${item.quantity}` : ''}</span><span>${item.currency}${(price * item.quantity).toFixed(2)}</span></div>`; });
+            if (checkoutItems) checkoutItems.innerHTML = itemsHtml;
+            if (checkoutTotal) checkoutTotal.textContent = getCartTotal().toFixed(2);
+            modal.style.display = 'flex';
+        }
+        
+        function closeCheckoutModal() { const modal = document.getElementById('checkoutModal'); if (modal) modal.style.display = 'none'; }
+        
+        function submitOrder() {
+            const name = document.getElementById('checkoutName')?.value;
+            const email = document.getElementById('checkoutEmail')?.value;
+            if (!name || !email) { showNotification('الرجاء إدخال الاسم والبريد الإلكتروني'); return; }
+            const orderData = {
+                orderId: 'ORD-' + Date.now(),
+                customer: { name, email, phone: document.getElementById('checkoutPhone')?.value, company: document.getElementById('checkoutCompany')?.value },
+                notes: document.getElementById('checkoutNotes')?.value,
+                items: cart.map(item => ({ id: item.id, name: item.name, quantity: item.quantity, price: getItemFinalPrice(item), currency: item.currency, customNote: item.customNote, negotiable: item.negotiable })),
+                total: getCartTotal(),
+                currency: '$',
+                date: new Date().toISOString(),
+                status: 'pending'
+            };
+            const orders = JSON.parse(localStorage.getItem('brilliant_orders') || '[]');
+            orders.push(orderData);
+            localStorage.setItem('brilliant_orders', JSON.stringify(orders));
+            showNotification(`🎉 شكراً ${name}! تم استلام طلبك ${orderData.orderId}`);
+            cart = [];
+            saveCart();
+            closeCheckoutModal();
+            toggleCartSidebar();
+        }
+        
+        // ============================================
+        // تأثيرات الصفحة الرئيسية والفلترة
+        // ============================================
+        
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (winScroll / height) * 100;
+            const progressBar = document.getElementById('scrollProgress');
+            if (progressBar) progressBar.style.width = scrolled + '%';
+            const header = document.getElementById('header');
+            if (header) header.style.boxShadow = window.scrollY > 50 ? 'var(--shadow)' : 'none';
+        });
+        
+        function animateNumbers() {
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                if (isNaN(target)) return;
+                let current = 0;
+                const increment = target / 50;
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) { stat.textContent = Math.floor(current); requestAnimationFrame(updateCounter); }
+                    else stat.textContent = target;
+                };
+                updateCounter();
+            });
+        }
+        
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1 });
+        reveals.forEach(el => revealObserver.observe(el));
+        
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            const statsObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { animateNumbers(); statsObserver.unobserve(entry.target); } }); }, { threshold: 0.5 });
+            statsObserver.observe(statsSection);
+        }
+        
+        // فلترة أعمالنا
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filterValue = btn.getAttribute('data-filter');
+                
+                filterButtons.forEach(button => button.classList.remove('active'));
+                btn.classList.add('active');
+                
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                        setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => { item.style.display = 'none'; }, 300);
+                    }
+                });
+            });
+        });
+        
+        // إضافة تأثيرات ظهور للبطاقات
+        portfolioItems.forEach((item, index) => {
+            item.style.transition = 'all 0.3s ease';
+            item.style.opacity = '1';
+        });
+        
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                showNotification(`شكراً ${name}، تم استلام طلبك وسنقوم بالرد خلال 24 ساعة`);
+                contactForm.reset();
+            });
+        }
+        
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        if (mobileMenuBtn && navLinks) {
+            mobileMenuBtn.addEventListener('click', () => { navLinks.classList.toggle('show'); const icon = mobileMenuBtn.querySelector('i'); if (icon) icon.classList.toggle('fa-times'); });
+            navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('show'); const icon = mobileMenuBtn.querySelector('i'); if (icon) icon.classList.remove('fa-times'); }); });
+        }
+        
+        const cards = document.querySelectorAll('.service-card, .immersive-card, .portfolio-item');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function(e) {
+                if (window.innerWidth > 768 && !this.classList.contains('portfolio-item')) {
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateY = (x - centerX) / 30;
+                    const rotateX = (centerY - y) / 30;
+                    this.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+                }
+            });
+            card.addEventListener('mouseleave', function() { this.style.transform = ''; });
+        });
+        
+        updateCartCount();
+        
+        console.log('✅ BRILLIANT SERVICES - نظام مبيعات متكامل مع معرض أعمال');
+        console.log('📋 المنتجات: Odoo | Zoho | تطوير مواقع | هوية بصرية | برمجيات | تقنيات غامرة');
+        console.log('🖼️ معرض أعمالنا: VR | AI | AR | برمجيات | ويب');
+        console.log('💰 جميع المنتجات قابلة للمناقشة السعرية حسب الطلب');
+    </script>
+</body>
+</html>
